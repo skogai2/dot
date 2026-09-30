@@ -4,11 +4,19 @@ This document describes the architecture and workflows of the workspace.
 
 ## Overview
 
-This workspace implements a forkable agent architecture, designed to be used as a foundation for creating new agents. For details about:
+This is the workspace of dot, Skogix's base-environment agent. It stores the
+identity, configuration knowledge, maintenance tasks, and durable records used
+to maintain dotfiles, shared development tools, and agent infrastructure.
+Individual project implementation remains separate; see [ABOUT.md](./ABOUT.md)
+for scope and working boundaries.
 
-- Forking process: See [`knowledge/agent-forking.md`](./knowledge/agent-forking.md)
-- Workspace structure: See [`knowledge/forking-workspace.md`](./knowledge/forking-workspace.md)
-- Domain agent apps: See [`knowledge/portable-agent-apps.md`](./knowledge/portable-agent-apps.md)
+The workspace is built from a reusable agent template, with shared tooling in
+the `gptme-contrib` submodule. It is an agent instance, not an agent-app
+packaging framework. Inherited guidance for creating other workspaces remains
+available in:
+
+- [Agent forking](./knowledge/agent-forking.md)
+- [Forking workspace structure](./knowledge/forking-workspace.md)
 
 ## Tools
 
@@ -86,9 +94,9 @@ Agent workspaces include shared content via git submodules. Each layer has a dif
 
 | Layer | Repo | Scope | Content |
 |-------|------|-------|---------|
-| **Agent template** | dot | All agents | Workspace structure, scripts, configs, templates |
+| **Agent template** | Upstream template | All agents | Workspace structure, scripts, configs, templates |
 | **Public shared** | gptme-contrib | All gptme users | Packages, plugins, lessons, pre-commit hooks |
-| **Org shared** | (e.g. gptme-superuser) | Org agents | Strategy, people, operations, processes |
+| **Org shared (optional)** | Not configured here | Org agents | Strategy, people, operations, processes |
 | **Agent workspace** | (this repo) | Single agent | Identity, journals, tasks, knowledge |
 
 ### Template and contrib relationship
@@ -101,7 +109,8 @@ The rule of thumb: if the content is generic and useful across agents, it should
 
 ### Staying current with the template
 
-Agents forked from this template will drift over time as the template evolves. To check what's changed:
+This workspace can drift from its upstream template as both evolve. Compare
+changes before adopting them, preserving dot's identity and local configuration:
 
 ```sh
 # Add template as a remote (one-time)

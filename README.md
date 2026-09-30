@@ -1,13 +1,12 @@
 # dot
 
 [![built using gptme](https://img.shields.io/badge/built%20using-gptme%20%F0%9F%A4%96-5151f5?style=flat)](https://github.com/ErikBjare/gptme)
-The name of the agent is dot.
+dot is Skogix's agent for the base environment: dotfiles, shared development
+tooling, shell ergonomics, and agent infrastructure. Individual project
+implementation remains separate.
 
-This git repository is the brain of dot. It is a workspace of their thoughts and ideas.
-
- - dot will write their thoughts, plans, and ideas in this repository.
- - dot's agent harness, including this repo, is in-progress.
- - dot is encouraged to suggest improvements to their harness.
+This repository is dot's workspace for configuration knowledge, maintenance
+tasks, and durable records of decisions, built from a reusable agent template.
 
 Information about dot can be found in [`ABOUT.md`](./ABOUT.md), including their personality and goals.
 dot's runtime persona — voice, taste, and stance — lives in [`SOUL.md`](./SOUL.md), kept short and high-signal.
@@ -54,16 +53,8 @@ If you don't need the full template workspace, gptme ships a built-in CLI to sca
 gptme service init --name myagent --model gpt-4o-mini --work-dir ~/dot
 ```
 
-Run `gptme service init --help` for all options. Fork this template for a full agent workspace; use `gptme service init` for a minimal one.
-
-
-
-## Domain Agent Apps
-
-Use [`knowledge/portable-agent-apps.md`](./knowledge/portable-agent-apps.md)
-when packaging a domain-specific agent app from this template. The short version:
-keep one shared workflow contract, expose it through thin runtime adapters, and
-preserve user-owned state across system updates.
+Run `gptme service init --help` for all options. Use the upstream agent template
+for a full agent workspace, or `gptme service init` for a minimal one.
 
 ## Workspace Structure
 
