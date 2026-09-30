@@ -24,7 +24,7 @@ context_cmd = "scripts/context.sh"
 # - gptme-contrib/skills/: shared skills (template-skill, code-review-helper, etc.)
 # External skills (Anthropic SKILL.md format) are crawled from all dirs.
 # First dir wins on filename collision, so agent-specific files take precedence.
-dirs = ["lessons", "skills", "gptme-contrib/lessons", "gptme-contrib/skills"]
+dirs = ["lessons", "skills", "gptme-contrib/skills"]
 
 [plugins]
 # Plugin directories to search for custom plugins
