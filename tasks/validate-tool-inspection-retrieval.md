@@ -1,8 +1,11 @@
 ---
 created: 2026-10-01
-state: todo
 priority: medium
-tags: [tools, validation, documentation]
+state: active
+tags:
+- tools
+- validation
+- documentation
 ---
 
 # Validate and demonstrate workspace inspection and retrieval tools
